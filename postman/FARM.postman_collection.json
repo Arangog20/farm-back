@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "2d02f817-55ce-46ed-a31a-db2ca5064cb7",
+		"name": "FARM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33481513",
+		"_collection_link": "https://www.postman.com/red-flare-845361/workspace/public-manuela/collection/33481513-2d02f817-55ce-46ed-a31a-db2ca5064cb7?action=share&source=collection_link&creator=33481513"
+	},
+	"item": [
+		{
+			"name": "RESTRICTIONS",
+			"item": [
+				{
+					"name": "create-animal-type-resttictions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"animalType\": \"LLAMA\",\r\n\"restrictedTypes\": [\"Toro\"]\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/restrictions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"restrictions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fin-all-animal-restrictions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/restrictions/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"restrictions",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-animal-type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/restrictions/find/Toro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"restrictions",
+								"find",
+								"Toro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-animal-type",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"animalType\": \"vaca\",\r\n  \"restrictedTypes\": [\"gallina\",\"ganzo\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/restrictions/update/vaca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"restrictions",
+								"update",
+								"vaca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-animal-restriction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/restrictions/delete/toro",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"restrictions",
+								"delete",
+								"toro"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "StartFragmentCreate, search, modify, and delete restrictions based on the type of animal. For example, bulls can coexist with cows but not with goatsEndFragment"
+		},
+		{
+			"name": "PENS",
+			"item": [
+				{
+					"name": "create-pen",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"corral-z\",\r\n    \"capacity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pen/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pen",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-animal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"animalId\":\"66dde546de837fac26181dda\",\r\n    \"penName\":\"corral-z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pen/add-animal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pen",
+								"add-animal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pen/find-all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pen",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-one-pen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pen/find/corral-y",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pen",
+								"find",
+								"corral-y"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-pen",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"corral-a\",\r\n    \"capacity\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pen/update/corral-a",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pen",
+								"update",
+								"corral-a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pen/delete/corral-8",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pen",
+								"delete",
+								"corral-8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "age-range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pen/age-range/corral-c",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pen",
+								"age-range",
+								"corral-c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ANIMALS",
+			"item": [
+				{
+					"name": "create-animals",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"DPruebaonald\",\r\n    \"animalType\":\"burro\",\r\n    \"age\": 60\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/animal/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"animal",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "animals-find-all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/animal/find-all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"animal",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-one-animal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/animal/find/66dd116e0fce84e82f5f421f",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"animal",
+								"find",
+								"66dd116e0fce84e82f5f421f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-animal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"66dd116e0fce84e82f5f421f\",\r\n    \"name\": \"ramiro\",\r\n    \"animalType\": \"oveja\",\r\n    \"age\": 60,\r\n    \"restrictions\": [\r\n        \"toro\",\r\n        \"conejo\",\r\n        \"cabra\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/animal/update/66dd116e0fce84e82f5f421f",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"animal",
+								"update",
+								"66dd116e0fce84e82f5f421f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/animal/delete/66dd0db1e6f8df056d822f71",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"animal",
+								"delete",
+								"66dd0db1e6f8df056d822f71"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL\n",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"value": "",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
