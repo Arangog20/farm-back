@@ -13,8 +13,6 @@ async function bootstrap() {
     credentials: true,
   });
 
-  const port = process.env.PORT || 4000;
-
   app.setGlobalPrefix('/api/v1');
 
   app.useGlobalPipes(
@@ -28,7 +26,7 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('Animals Farms')
+    .setTitle('Animals Farm')
     .setDescription('farm \n\n ▪️ Manuela Giraldo Arango')
     .setVersion('1.0')
     .addTag('Farm')
@@ -36,6 +34,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
+  const port = process.env.PORT || 4000;
   await app.listen(port);
   console.log(`Server running on port ${port}`);
   console.log(`Access to the project via Swagger: localhost:${port}/api-doc`);
