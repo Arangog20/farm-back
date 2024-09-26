@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import {
   IsArray,
   IsMongoId,
@@ -14,22 +15,27 @@ export class CreateAnimalDto {
 
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   name: string;
 
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   animalType: string;
 
   @IsNumber()
   @IsNotEmpty()
+  @ApiProperty()
   age: number;
 
   @IsOptional()
   @IsArray()
   @IsString({ each: true })
+  @ApiProperty()
   restrictions?: string[];
 
   @IsOptional()
   @IsMongoId()
+  @ApiProperty()
   penId?: string;
 }
