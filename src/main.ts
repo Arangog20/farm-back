@@ -28,7 +28,7 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('Animals Farm')
+    .setTitle('Animals Farms')
     .setDescription('farm \n\n ▪️ Manuela Giraldo Arango')
     .setVersion('1.0')
     .addTag('Farm')
